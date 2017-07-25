@@ -64,8 +64,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 0,1,0,0
- PRODUCTVERSION 0,1,0,0
+ FILEVERSION 0,2,0,0
+ PRODUCTVERSION 0,2,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -82,12 +82,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "HIRAOKA HYPERS TOOLS, Inc."
             VALUE "FileDescription", "Clipboard.SetText in VBA Edit"
-            VALUE "FileVersion", "0, 1, 0, 0"
+            VALUE "FileVersion", "0, 2, 0, 0"
             VALUE "InternalName", "ClipboardLib.dll"
             VALUE "LegalCopyright", "(C) HIRAOKA HYPERS TOOLS, Inc.  All rights reserved."
             VALUE "OriginalFilename", "ClipboardLib.dll"
             VALUE "ProductName", "ClipboardLib"
-            VALUE "ProductVersion", "0, 1, 0, 0"
+            VALUE "ProductVersion", "0, 2, 0, 0"
         END
     END
     BLOCK "VarFileInfo"

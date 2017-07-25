@@ -16,6 +16,7 @@ library ClipboardLib
 		properties:
 		methods:
 			[id(101), helpstring("メソッド SetText")] void SetText(BSTR inStr);
+			[id(102), helpstring("メソッド GetText")] BSTR GetText(void);
 	};
 
 	//  Clipboard のクラス情報

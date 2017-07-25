@@ -47,6 +47,7 @@ END_MESSAGE_MAP()
 
 BEGIN_DISPATCH_MAP(CClipboard, CCmdTarget)
 	DISP_FUNCTION_ID(CClipboard, "SetText", dispidSetText, SetText, VT_EMPTY, VTS_BSTR)
+	DISP_FUNCTION_ID(CClipboard, "GetText", dispidGetText, GetText, VT_BSTR, VTS_NONE)
 END_DISPATCH_MAP()
 
 // メモ: VBA からタイプ セーフなバインドをサポートするために、IID_IClipboard のサポートを追加します。
@@ -96,4 +97,23 @@ void CClipboard::SetText(LPCWSTR inStr)
 		}
 	}
 	AfxThrowOleDispatchException(101, L"SetText failure");
+}
+
+BSTR CClipboard::GetText(void)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	CString strResult;
+
+	if (OpenClipboard(0)) {
+		HGLOBAL hGlobalMemory = GetClipboardData(CF_UNICODETEXT);
+		PVOID pGlobalMemory = GlobalLock(hGlobalMemory);
+		if (pGlobalMemory != NULL) {
+			int bytes = GlobalSize(hGlobalMemory);
+			strResult = CString(static_cast<LPCWSTR>(pGlobalMemory), bytes / sizeof(WCHAR));
+		}
+		CloseClipboard();
+	}
+
+	return strResult.AllocSysString();
 }

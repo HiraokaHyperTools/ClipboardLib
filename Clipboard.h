@@ -24,8 +24,10 @@ protected:
 
 	enum 
 	{
+		dispidGetText = 102L,
 		dispidSetText = 101L
 	};
+	BSTR GetText(void);
 };
 
 
