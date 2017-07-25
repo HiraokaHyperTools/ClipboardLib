@@ -7,7 +7,7 @@ Set Clipboard = CreateObject("ClipboardLib.Clipboard")
 Clipboard.SetText "123あり有り☑"
 ```
 
-Excel:
+Excel VBA Macro:
 ```vb
 Public Sub CopyText(Text As String)
     Dim Clipboard
@@ -16,7 +16,7 @@ Public Sub CopyText(Text As String)
 End Sub
 ```
 
-Excel:
+Excel VBA Macro:
 ```vb
 Public Sub PasteTextHere()
     Dim Clipboard
