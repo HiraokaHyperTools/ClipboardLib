@@ -1,0 +1,10 @@
+; ClipboardLib.def : DLL のモジュール パラメータを宣言します。
+
+LIBRARY      "ClipboardLib"
+
+EXPORTS
+    ; 明示的なエクスポートはここへ記述できます
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer PRIVATE

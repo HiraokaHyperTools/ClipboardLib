@@ -1,0 +1,28 @@
+// ClipboardLib.idl : ClipboardLib.dll のタイプ ライブラリ ソース
+// このファイルは、タイプ ライブラリ (ClipboardLib.tlb) を作成するために、
+// MIDL コンパイラによって処理されます。
+
+#include "olectl.h"
+[ uuid(CD40487F-DFD6-40DC-8455-82FA45B0B32A), version(1.0) ]
+library ClipboardLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	//  Clipboard のプライマリ ディスパッチ インターフェイス
+		
+	[ uuid(A3117608-2FC5-4CAF-979C-636271D502CE) ]
+	dispinterface IClipboard
+	{
+		properties:
+		methods:
+			[id(101), helpstring("メソッド SetText")] void SetText(BSTR inStr);
+	};
+
+	//  Clipboard のクラス情報
+
+	[ uuid(D07AF957-C9ED-43C2-BF4C-4636A8C9F9FB) ]
+	coclass Clipboard
+	{
+		[default] dispinterface IClipboard;
+	};
+};
